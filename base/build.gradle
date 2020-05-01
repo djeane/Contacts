@@ -24,7 +24,6 @@ android {
 
         release {
             minifyEnabled true
-            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -37,6 +36,9 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+    dynamicFeatures = [":contacts"]
+
+
 }
 
 dependencies {
