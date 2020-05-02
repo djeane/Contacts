@@ -2,11 +2,17 @@ package com.picpay.desafio.android.user.ui.activities
 
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.RecyclerView
+import com.picpay.desafio.android.arch.ViewModelInterface
 import com.picpay.desafio.android.base.BaseActivity
 import com.picpay.desafio.android.user.R
 import com.picpay.desafio.android.user.ui.adapters.UserListAdapter
+import com.picpay.desafio.android.user.ui.viewmodel.UserViewModel
+import javax.inject.Inject
 
-class MainActivity : BaseActivity(R.layout.activity_main) {
+class UsersActivity : BaseActivity(R.layout.activity_main), ViewModelInterface<UserViewModel> {
+
+    @Inject
+    override lateinit var viewModel: UserViewModel
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar

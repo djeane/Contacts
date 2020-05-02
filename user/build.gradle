@@ -26,6 +26,9 @@ dependencies {
     implementation project(':base')
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation "androidx.appcompat:appcompat:$appcompat_version"
+
+    implementation "com.google.dagger:dagger:$dagger_version"
+    //kapt "com.google.dagger:dagger-compiler:$dagger_version"
 }
 repositories {
     mavenCentral()

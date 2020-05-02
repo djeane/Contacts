@@ -13,7 +13,7 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.picpay.desafio.android.user.ui.activities.MainActivity">
+        <activity android:name="com.picpay.desafio.android.user.ui.activities.UsersActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
