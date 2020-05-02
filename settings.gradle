@@ -1,2 +1,2 @@
 include ':base'
-include ':user'
+include ':contacts'

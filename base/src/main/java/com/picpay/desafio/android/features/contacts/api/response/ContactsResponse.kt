@@ -1,11 +1,11 @@
-package com.picpay.desafio.android.features.user.api.response
+package com.picpay.desafio.android.features.contacts.api.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class UserResponse(
+data class ContactsResponse(
     @SerializedName("img") val img: String,
     @SerializedName("name") val name: String,
     @SerializedName("id") val id: Int,

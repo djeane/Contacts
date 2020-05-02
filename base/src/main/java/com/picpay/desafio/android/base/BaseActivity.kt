@@ -8,13 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.picpay.desafio.android.PicPayApp
 import com.picpay.desafio.android.arch.LoadingInterface
 
-open class BaseActivity(@LayoutRes layout: Int) : AppCompatActivity(layout), LoadingInterface {
+abstract class BaseActivity(@LayoutRes layout: Int) : AppCompatActivity(layout), LoadingInterface {
 
     private val loading by lazy { ProgressBar(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (applicationContext as PicPayApp).applicationComponent.inject(this)
         super.onCreate(savedInstanceState)
+        inject()
     }
 
     override fun showLoading() {
@@ -24,4 +25,8 @@ open class BaseActivity(@LayoutRes layout: Int) : AppCompatActivity(layout), Loa
     override fun hideLoading() {
         loading.visibility = View.GONE
     }
+
+    open fun inject(){}
+
+    fun getPicPayApp() = applicationContext as PicPayApp
 }

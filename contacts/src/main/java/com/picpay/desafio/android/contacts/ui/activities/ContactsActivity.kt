@@ -1,24 +1,36 @@
-package com.picpay.desafio.android.user.ui.activities
+package com.picpay.desafio.android.contacts.ui.activities
 
+import android.os.Bundle
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.RecyclerView
 import com.picpay.desafio.android.arch.ViewModelInterface
 import com.picpay.desafio.android.base.BaseActivity
-import com.picpay.desafio.android.user.R
-import com.picpay.desafio.android.user.ui.adapters.UserListAdapter
-import com.picpay.desafio.android.user.ui.viewmodel.UserViewModel
+import com.picpay.desafio.android.contacts.R
+import com.picpay.desafio.android.contacts.di.ContactsInjector
+import com.picpay.desafio.android.contacts.di.ContactsModule
+import com.picpay.desafio.android.contacts.ui.adapters.UserListAdapter
+import com.picpay.desafio.android.contacts.ui.viewmodel.ContactsViewModel
 import javax.inject.Inject
 
-class UsersActivity : BaseActivity(R.layout.activity_main), ViewModelInterface<UserViewModel> {
+class ContactsActivity : BaseActivity(R.layout.activity_contacts),
+    ViewModelInterface<ContactsViewModel> {
 
     @Inject
-    override lateinit var viewModel: UserViewModel
+    override lateinit var viewModel: ContactsViewModel
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
     private lateinit var adapter: UserListAdapter
 
     private val url = "http://careers.picpay.com/tests/mobdev/"
+
+    override fun inject() {
+        ContactsInjector.get(this).inject(this)
+    }
+
+    /*override fun inject() {
+        CardsInjector.get(this).plus(CardStatusModule(this)).inject(this)
+    }*/
 
     //private val gson: Gson by lazy { GsonBuilder().create() }
 

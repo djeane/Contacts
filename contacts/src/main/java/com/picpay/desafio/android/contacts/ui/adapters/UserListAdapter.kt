@@ -1,17 +1,17 @@
-package com.picpay.desafio.android.user.ui.adapters
+package com.picpay.desafio.android.contacts.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.picpay.desafio.android.features.user.api.response.UserResponse
-import com.picpay.desafio.android.user.R
+import com.picpay.desafio.android.contacts.R
 import com.picpay.desafio.android.utils.UserListDiffCallback
-import com.picpay.desafio.android.user.ui.viewholder.UserListItemViewHolder
+import com.picpay.desafio.android.contacts.ui.viewholder.UserListItemViewHolder
+import com.picpay.desafio.android.features.contacts.api.response.ContactsResponse
 
 class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>() {
 
-    var users = emptyList<UserResponse>()
+    var users = emptyList<ContactsResponse>()
         set(value) {
             val result = DiffUtil.calculateDiff(
                 UserListDiffCallback(
