@@ -9,7 +9,7 @@ import com.picpay.desafio.android.utils.UserListDiffCallback
 import com.picpay.desafio.android.contacts.ui.viewholder.UserListItemViewHolder
 import com.picpay.desafio.android.features.contacts.api.response.ContactsResponse
 
-class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>() {
+class UserListAdapter(val contacts: List<ContactsResponse>) : RecyclerView.Adapter<UserListItemViewHolder>() {
 
     var users = emptyList<ContactsResponse>()
         set(value) {
@@ -24,17 +24,14 @@ class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>() {
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserListItemViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_user, parent, false)
 
-        return UserListItemViewHolder(
-            view
-        )
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_contacts, parent, false)
+        return UserListItemViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: UserListItemViewHolder, position: Int) {
-        holder.bind(users[position])
+        holder.bind(contacts[position])
     }
 
-    override fun getItemCount(): Int = users.size
+    override fun getItemCount(): Int = contacts.size
 }

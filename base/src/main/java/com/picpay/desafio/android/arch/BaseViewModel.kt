@@ -31,7 +31,7 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
         }
     }
 
-    open fun <T : ViewState> mediator(): MutableLiveData<T> {
+    protected fun <T : ViewState> mediator(): MutableLiveData<T> {
         val liveData = MutableLiveData<T>()
         viewState.addSource(liveData) { viewState.value = it }
         return liveData

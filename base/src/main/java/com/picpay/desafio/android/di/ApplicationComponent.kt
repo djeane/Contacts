@@ -17,13 +17,13 @@ annotation class PicPayAppScope
 @PicPayAppScope
 @Component(
     modules = [
-        //ServicesModule::class,
+        ServicesModule::class,
         RetrofitModule::class
     ]
 )
 interface ApplicationComponent : MembersInjector<PicPayApp> {
 
-    //val contactsService: ContactsService
+    val contactsService: ContactsService
 
     @Named(RetrofitModule.GENERAL_RETROFIT)
     fun provideGeneralRetrofit(): Retrofit

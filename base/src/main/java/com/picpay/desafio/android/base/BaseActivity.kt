@@ -17,9 +17,9 @@ abstract class BaseActivity(@LayoutRes layout: Int) : AppCompatActivity(layout),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (applicationContext as PicPayApp).applicationComponent.inject(this)
+        inject()
         super.onCreate(savedInstanceState)
         viewModelInterface?.prepareViewModel(this)
-        inject()
     }
 
     override fun showLoading() {
@@ -30,7 +30,7 @@ abstract class BaseActivity(@LayoutRes layout: Int) : AppCompatActivity(layout),
         loading.visibility = View.GONE
     }
 
-    open fun inject(){}
+    open fun inject() {}
 
     fun getPicPayApp() = applicationContext as PicPayApp
 }

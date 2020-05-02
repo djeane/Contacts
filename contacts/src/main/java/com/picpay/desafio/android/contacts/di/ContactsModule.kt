@@ -1,19 +1,15 @@
 package com.picpay.desafio.android.contacts.di
 
-import com.picpay.desafio.android.di.FeatureScope
-import com.picpay.desafio.android.di.RetrofitModule
-import com.picpay.desafio.android.features.contacts.api.service.ContactsService
+import androidx.appcompat.app.AppCompatActivity
+import com.picpay.desafio.android.contacts.ui.activities.ContactsActivity
 import dagger.Module
 import dagger.Provides
-import retrofit2.Retrofit
-import javax.inject.Named
 
-/*@Module
+@Module
 class ContactsModule {
 
-    @FeatureScope
     @Provides
-    fun provideContactsService(retrofit: Retrofit): ContactsService {
-        return retrofit.create(ContactsService::class.java)
+    fun providesActivity(activity: ContactsActivity): AppCompatActivity {
+        return activity
     }
-}*/
+}
