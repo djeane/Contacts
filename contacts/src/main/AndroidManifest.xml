@@ -1,11 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.picpay.desafio.android.contacts">
 
     <dist:module
         dist:instant="false"
-        dist:title="@string/title_base">
+        dist:title="@string/title_contacts">
         <dist:delivery>
             <dist:on-demand />
         </dist:delivery>
@@ -13,13 +12,7 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.picpay.desafio.android.contacts.ui.activities.ContactsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+        <activity android:name="com.picpay.desafio.android.contacts.ui.activities.ContactsActivity"/>
     </application>
 </manifest>
 

@@ -8,7 +8,7 @@ class ExampleService(
 ) {
 
     fun example(): List<ContactsResponse> {
-        val users = service.getUsers().execute()
+        val users = service.getContacts().execute()
 
         return users.body() ?: emptyList()
     }

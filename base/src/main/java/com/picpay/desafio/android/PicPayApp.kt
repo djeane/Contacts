@@ -24,11 +24,8 @@ open class PicPayApp : Application() {
             }
     }
 
-    inline fun <reified T : FeatureComponent> getOrPutComponent(component: () -> T): T {
+    /*inline fun <reified T : FeatureComponent> getOrPutComponent(component: () -> T): T {
         return featureComponents.getOrPut(T::class.java.name, component) as T
-    }
+    }*/
 
-    companion object {
-        fun getInstance() = this
-    }
 }

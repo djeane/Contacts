@@ -11,16 +11,16 @@ import javax.inject.Named
 @Module
 class RetrofitModule {
 
+    @Provides
+    @Reusable
+    @Named(GENERAL_RETROFIT)
+    fun provideGeneralRetrofit(): Retrofit = getRetrofit()
+
     private fun getRetrofit() = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .client(OkHttpClient.Builder().build())
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-
-    @Provides
-    @Reusable
-    @Named(GENERAL_RETROFIT)
-    fun provideGeneralRetrofit(): Retrofit = getRetrofit()
 
     companion object {
         private const val BASE_URL = "http://careers.picpay.com/tests/mobdev/"

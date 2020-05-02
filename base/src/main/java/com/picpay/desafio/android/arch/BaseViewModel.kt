@@ -31,13 +31,13 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
         }
     }
 
-    private fun <T : ViewState> mediator(): MutableLiveData<T> {
+    open fun <T : ViewState> mediator(): MutableLiveData<T> {
         val liveData = MutableLiveData<T>()
         viewState.addSource(liveData) { viewState.value = it }
         return liveData
     }
 
-    private fun load(asyncBlock: suspend CoroutineScope.() -> Unit) {
+    fun load(asyncBlock: suspend CoroutineScope.() -> Unit) {
         CoroutineScope(Dispatchers.Main + job).launch {
             showLoading()
             asyncBlock()

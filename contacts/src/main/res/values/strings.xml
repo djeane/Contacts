@@ -2,6 +2,6 @@
     <string name="app_name">PicPay</string>
     <string name="title">Contatos</string>
     <string name="error">Ocorreu um erro. Tente novamente.</string>
-    <string name="title_base">Base</string>
+    <string name="title_contacts">Contacts</string>
 
 </resources>

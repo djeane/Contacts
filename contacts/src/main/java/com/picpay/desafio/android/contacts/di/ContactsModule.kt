@@ -8,12 +8,12 @@ import dagger.Provides
 import retrofit2.Retrofit
 import javax.inject.Named
 
-@Module
+/*@Module
 class ContactsModule {
 
     @FeatureScope
     @Provides
-    fun provideContactsService(@Named(RetrofitModule.GENERAL_RETROFIT) retrofit: Retrofit): ContactsService {
+    fun provideContactsService(retrofit: Retrofit): ContactsService {
         return retrofit.create(ContactsService::class.java)
     }
-}
+}*/

@@ -8,5 +8,5 @@ import retrofit2.http.GET
 interface ContactsService {
 
     @GET("users")
-    fun getUsers(): Call<List<ContactsResponse>>
+    fun getContacts(): Call<List<ContactsResponse>>
 }

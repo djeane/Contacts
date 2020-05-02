@@ -8,6 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Splash">
+        <item name="android:windowBackground">@mipmap/ic_logo_transparent</item>
+    </style>
+
     <style name="ScreenTitleTextView" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">28sp</item>

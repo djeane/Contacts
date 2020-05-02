@@ -15,8 +15,8 @@ interface ViewModelInterface<T: BaseViewModel> {
         viewModel.viewState.observe(lifecycleOwner, Observer { renderState( it ) })
     }
 
-    fun renderState(it: ViewState?){
-        when (it) {
+    fun renderState(state: ViewState?){
+        when (state) {
             is LoadingState.Show -> loadingInterface.showLoading()
             is LoadingState.Hide -> loadingInterface.hideLoading()
         }
