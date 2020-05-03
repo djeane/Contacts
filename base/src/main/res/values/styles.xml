@@ -9,7 +9,7 @@
     </style>
 
     <style name="AppTheme.Splash">
-        <item name="android:windowBackground">@mipmap/ic_logo_transparent</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
 
     <style name="ScreenTitleTextView" parent="TextAppearance.AppCompat">

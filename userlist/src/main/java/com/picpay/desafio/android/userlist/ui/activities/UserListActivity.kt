@@ -39,9 +39,7 @@ class UserListActivity : BaseActivity(R.layout.activity_user_list),
     }
 
     private fun renderSuccessState(contacts: List<UserListResponse>) {
-        val adapter = UserListAdapter().apply { userList = contacts }
-        recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-        Toast.makeText(this, "Contatos apareceram", Toast.LENGTH_SHORT).show()
+        recyclerView.adapter = UserListAdapter().apply { userList = contacts }
     }
 }
