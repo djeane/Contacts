@@ -1,14 +1,14 @@
 package com.picpay.desafio.android
 
-import com.picpay.desafio.android.features.contacts.api.service.ContactsService
-import com.picpay.desafio.android.features.contacts.api.response.ContactsResponse
+import com.picpay.desafio.android.features.contacts.api.service.UserListService
+import com.picpay.desafio.android.features.contacts.api.response.UserListResponse
 
 class ExampleService(
-    private val service: ContactsService
+    private val service: UserListService
 ) {
 
-    fun example(): List<ContactsResponse> {
-        val users = service.getContacts().execute()
+    fun example(): List<UserListResponse> {
+        val users = service.getUserList().execute()
 
         return users.body() ?: emptyList()
     }

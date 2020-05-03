@@ -1,6 +1,6 @@
 package com.picpay.desafio.android.di
 
-import com.picpay.desafio.android.features.contacts.api.service.ContactsService
+import com.picpay.desafio.android.features.contacts.api.service.UserListService
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -12,7 +12,7 @@ class ServicesModule {
 
     @Provides
     @Reusable
-    fun provideContactsService(@Named(RetrofitModule.GENERAL_RETROFIT) retrofit: Retrofit): ContactsService {
-        return retrofit.create(ContactsService::class.java)
+    fun provideContactsService(@Named(RetrofitModule.GENERAL_RETROFIT) retrofit: Retrofit): UserListService {
+        return retrofit.create(UserListService::class.java)
     }
 }

@@ -15,7 +15,7 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
 
     val viewState = MediatorLiveData<ViewState>()
 
-    val job = Job()
+    private val job = Job()
 
     private val loadingLiveData = mediator<LoadingState>()
 

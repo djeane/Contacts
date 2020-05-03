@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class SplashActivity : AppCompatActivity() {
 
-    private val activityName = "com.picpay.desafio.android.contacts.ui.activities.ContactsActivity"
+    private val activityName = "com.picpay.desafio.android.userlist.ui.activities.UserListActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

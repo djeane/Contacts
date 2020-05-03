@@ -5,13 +5,14 @@ import android.view.View
 import android.widget.ProgressBar
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.picpay.desafio.android.PicPayApp
 import com.picpay.desafio.android.arch.LoadingInterface
 import com.picpay.desafio.android.arch.ViewModelInterface
 
 abstract class BaseActivity(@LayoutRes layout: Int) : AppCompatActivity(layout), LoadingInterface {
 
-    private val loading by lazy { ProgressBar(this) }
+    open lateinit var loading: ProgressBar
 
     private val viewModelInterface by lazy { this as? ViewModelInterface<*> }
 
@@ -20,6 +21,12 @@ abstract class BaseActivity(@LayoutRes layout: Int) : AppCompatActivity(layout),
         inject()
         super.onCreate(savedInstanceState)
         viewModelInterface?.prepareViewModel(this)
+    }
+
+    fun setUpToolbarTitle(toolbar: Toolbar, toolbarTile: Int) {
+        setSupportActionBar(toolbar).apply {
+            title = getString(toolbarTile)
+        }
     }
 
     override fun showLoading() {

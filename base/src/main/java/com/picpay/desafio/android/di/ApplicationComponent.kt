@@ -2,7 +2,7 @@ package com.picpay.desafio.android.di
 
 import com.picpay.desafio.android.PicPayApp
 import com.picpay.desafio.android.base.BaseActivity
-import com.picpay.desafio.android.features.contacts.api.service.ContactsService
+import com.picpay.desafio.android.features.contacts.api.service.UserListService
 import dagger.BindsInstance
 import dagger.Component
 import dagger.MembersInjector
@@ -23,7 +23,7 @@ annotation class PicPayAppScope
 )
 interface ApplicationComponent : MembersInjector<PicPayApp> {
 
-    val contactsService: ContactsService
+    val contactsService: UserListService
 
     @Named(RetrofitModule.GENERAL_RETROFIT)
     fun provideGeneralRetrofit(): Retrofit
