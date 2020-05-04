@@ -11,7 +11,7 @@ import com.picpay.desafio.android.features.contacts.api.response.UserListRespons
 
 class UserListAdapter : RecyclerView.Adapter<UserListItemViewHolder>() {
 
-    var userList = emptyList<UserListResponse>()
+    var userList = mutableListOf<UserListResponse>()
         set(value) {
             val result = DiffUtil.calculateDiff(
                 UserListDiffCallback(

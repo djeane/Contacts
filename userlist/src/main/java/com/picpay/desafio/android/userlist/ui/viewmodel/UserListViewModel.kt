@@ -5,8 +5,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent
 import com.picpay.desafio.android.arch.BaseViewModel
 import com.picpay.desafio.android.arch.ViewState
-import com.picpay.desafio.android.userlist.model.UserListRepository
 import com.picpay.desafio.android.features.contacts.api.response.UserListResponse
+import com.picpay.desafio.android.userlist.model.UserListRepository
 import javax.inject.Inject
 
 class UserListViewModel @Inject constructor(
@@ -25,7 +25,7 @@ class UserListViewModel @Inject constructor(
     }
 
     sealed class CallState : ViewState {
-        class SuccessState(val contacts: List<UserListResponse>) : CallState()
+        class SuccessState(val contacts: MutableList<UserListResponse>) : CallState()
         object ErrorStare : CallState()
     }
 }

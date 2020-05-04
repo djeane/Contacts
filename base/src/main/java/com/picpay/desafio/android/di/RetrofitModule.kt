@@ -3,7 +3,6 @@ package com.picpay.desafio.android.di
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -18,8 +17,8 @@ class RetrofitModule {
     @Named(GENERAL_RETROFIT)
     fun provideGeneralRetrofit(): Retrofit = getRetrofit()
 
-    private fun getOkHttp(): OkHttpClient{
-        val interceptor =  HttpLoggingInterceptor().apply {
+    private fun getOkHttp(): OkHttpClient {
+        val interceptor = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
 

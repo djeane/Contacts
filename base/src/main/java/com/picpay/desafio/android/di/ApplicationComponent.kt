@@ -18,12 +18,14 @@ annotation class PicPayAppScope
 @Component(
     modules = [
         ServicesModule::class,
-        RetrofitModule::class
+        RetrofitModule::class,
+        PicPayDatabaseModule::class
     ]
 )
 interface ApplicationComponent : MembersInjector<PicPayApp> {
 
     val contactsService: UserListService
+    val app: PicPayApp
 
     @Named(RetrofitModule.GENERAL_RETROFIT)
     fun provideGeneralRetrofit(): Retrofit
@@ -34,7 +36,7 @@ interface ApplicationComponent : MembersInjector<PicPayApp> {
     interface Builder {
 
         @BindsInstance
-        fun buildPicPayApplication(app: PicPayApp): Builder
+        fun application(app: PicPayApp): Builder
 
         fun build(): ApplicationComponent
     }

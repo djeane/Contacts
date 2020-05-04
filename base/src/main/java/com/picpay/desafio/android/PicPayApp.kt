@@ -17,7 +17,7 @@ open class PicPayApp : Application() {
         super.onCreate()
 
         applicationComponent = DaggerApplicationComponent.builder()
-            .buildPicPayApplication(this)
+            .application(this)
             .build().also {
                 it.injectMembers(this)
             }
