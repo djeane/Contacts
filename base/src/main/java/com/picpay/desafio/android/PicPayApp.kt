@@ -1,6 +1,7 @@
 package com.picpay.desafio.android
 
 import android.app.Application
+import com.jakewharton.threetenabp.AndroidThreeTen
 import com.picpay.desafio.android.di.ApplicationComponent
 import com.picpay.desafio.android.di.DaggerApplicationComponent
 import com.picpay.desafio.android.di.FeatureComponent
@@ -21,6 +22,7 @@ open class PicPayApp : Application() {
             .build().also {
                 it.injectMembers(this)
             }
+        AndroidThreeTen.init(this)
     }
 
     inline fun <reified T : FeatureComponent> getOrPutComponent(component: () -> T): T {
